@@ -1,0 +1,25 @@
+{
+  "name": "AWS Favicons",
+  "version": "1.0.0",
+  "description": "Change AWS favicons per service",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://console.aws.amazon.com/*",
+        "https://*.console.aws.amazon.com/*"
+      ],
+      "js": [
+        "favicons.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "favicons/*"
+  ],
+  "permissions": [
+    "tabs",
+    "https://console.aws.amazon.com/*"
+  ]
+}
+
