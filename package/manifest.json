@@ -1,6 +1,6 @@
 {
   "name": "AWS Favicons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Change AWS favicons per service",
   "manifest_version": 2,
   "content_scripts": [

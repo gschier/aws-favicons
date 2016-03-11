@@ -67,7 +67,7 @@
 
     if (favicon) {
         var extensionId = chrome.runtime.id;
-        var href = 'chrome-extension://' + extensionId + favicon;
+        var href = 'chrome-extension://' + extensionId + favicon + '?c=' + Date.now();
         var link = document.createElement('link');
 
         link.type = 'image/x-icon';
