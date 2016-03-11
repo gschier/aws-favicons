@@ -68,12 +68,25 @@
     if (favicon) {
         var extensionId = chrome.runtime.id;
         var href = 'chrome-extension://' + extensionId + favicon + '?c=' + Date.now();
+        var head = document.getElementsByTagName('head')[0];
+
+        var shortcutIcon = document.querySelectorAll('link[rel="shortcut icon"');
+        var icon = document.querySelectorAll('link[rel="icon"');
+
+        if (shortcutIcon.length) {
+            head.removeChild(shortcutIcon[0]);
+        }
+
+        if (icon.length) {
+            head.removeChild(icon[0]);
+        }
+
         var link = document.createElement('link');
 
         link.type = 'image/x-icon';
         link.rel = 'shortcut icon';
         link.href = href;
 
-        document.getElementsByTagName('head')[0].appendChild(link);
+        head.appendChild(link);
     }
 }());
