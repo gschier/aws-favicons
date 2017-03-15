@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Resize all icons to 32x32 PNGs
+for file in ../favicons-masters/*.png; do
+    ./squareup -m pad -s 32 -c trans ../favicons-masters/`basename $file` ../package/favicons/`basename $file`
+done
