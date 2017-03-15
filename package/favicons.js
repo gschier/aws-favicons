@@ -1,5 +1,6 @@
 (function() {
     var supportedServices = [
+        "acm",
         "apigateway",
         "appstream",
         "artifact",
@@ -71,7 +72,8 @@
 
 
     var favicon = null;
-    for (var slug in supportedServices) {
+    for (var slug of supportedServices) {
+        console.log(slug);
         if (window.location.pathname.indexOf('/' + slug) === 0) {
             favicon = '/favicons/' + slug + '.png';
             break;
